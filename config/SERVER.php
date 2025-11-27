@@ -2,7 +2,7 @@
 	
 	/*----------  Datos del servidor  ----------*/
 	const SERVER="localhost";
-	const DB="gym_siscopam";
+	const DB="chinita";
 	const USER="root";
 	const PASS="";
 

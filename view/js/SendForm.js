@@ -1,5 +1,5 @@
 function SendFormAjax() {
-
+    console.log("cuca");
     var MsjErrorSending = `<div class="responseProcess text-white">
                                 <div class="container-loader">
                                     <div class="loader">
@@ -116,4 +116,5 @@ function SendFormAjax() {
 
 $(document).ready(function () {
     SendFormAjax();
+
 });

@@ -1,15 +1,24 @@
 <?php 
 session_start();
+include_once "../../model/modeloPrincipal.php"; // se incluye el modelo principal
+include_once "../../model/configuracion_model.php"; // se incluye el modelo de configuracion
 
-include_once "../include/modelos_include.php"; // se incluyen los modelos necesarios para la vista
+include_once "../../model/modelo_usuario.php";  // se incluye el modelo de usuario
+include_once "../../model/rol_model.php"; // se incluye el modelo rol
+
+include_once "../../model/bitacora_model.php"; // se incluye el modelo de bitacora
+include_once "../../model/alert_model.php"; // se incluye el modelo de alertas
+
 
 $configuracion = mysqli_fetch_array(modeloPrincipal::consultar("SELECT intentos_inicio_sesion FROM configuracion"));
 $intentos_inicio_sesion = intval($configuracion['intentos_inicio_sesion']);
 
 // Se limpian y validan los datos recibidos a través de POST (usuario y contraseña).
-$usuario = modeloPrincipal::limpiar_cadena($_POST['correo']);
+// $usuario = modeloPrincipal::limpiar_cadena($_POST['correo']);
+
+$usuario = modeloprincipal::limpiar_cadena($_POST["nation"].$_POST["dni_logIn"]);
 // $contraseña = modeloPrincipal::limpiar_encriptar($_POST['contraseña']);
-$contraseña = modeloPrincipal::hashear_contrasena($_POST['contraseña']);
+$contraseña = modeloPrincipal::hashear_contrasena($_POST['password_logIn']);
 
 // Se verifica que no se hayan recibido campos vacíos.
 modeloPrincipal::validar_campos_vacios([$usuario, $contraseña]);
@@ -32,7 +41,7 @@ if ($respuesta_captcha !== $captcha) {
 }
 
 // Se realiza una consulta a la base de datos para verificar si el usuario existe y si las credenciales son correctas.
-$selectUser = model_user::consulta_usuario_existe("U.id_usuario, U.nombre, U.apellido, U.telefono, U.cedula, U.correo, U.direccion, U.estado, U.contraseña, U.id_rol, U.primer_inicio, U.bloqueado, U.sesion_activa, R.nombre AS rol_usuario, R.estado AS estado_rol","U.correo = '$usuario'");
+$selectUser = model_user::consulta_usuario_existe("U.id_usuario, U.nombre, U.apellido, U.telefono, U.cedula, U.correo, U.direccion, U.estado, U.contraseña, U.id_rol, U.primer_inicio, U.bloqueado, U.sesion_activa, R.nombre AS rol_usuario, R.estado AS estado_rol","U.cedula = '$usuario'");
 
 // obtenemos el resultado de la consulta y la guardamos en un array
 $datos_usuario = mysqli_fetch_array($selectUser);

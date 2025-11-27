@@ -73,7 +73,7 @@ if($modulo === "Guardar"){
         exit();
     }
 
-    if (modeloprincipal::verificar_datos("[A-Za-zñÑÁÉÍÚÓáéíóúñÑ0-9\.\*\_\-]{8,16}", $contraseña)) {
+    if (modeloprincipal::verificar_datos("[A-Za-zñÑÁÉÍÚÓáéíóúñÑ0-9\.\*\_\-]{8,60}", $contraseña)) {
         alert_model::alert_of_format_wrong("'contraseña'");
         exit();
     }
