@@ -1,0 +1,11 @@
+#ignorar la carpeta vendor
+/vendor
+
+#ignorar archivos de configuración de composer.json
+Composer
+Composer.json
+
+#log del sistema
+*.log
+*.tmp
+.DS_Store
