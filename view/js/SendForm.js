@@ -1,5 +1,4 @@
 function SendFormAjax() {
-    console.log("cuca");
     var MsjErrorSending = `<div class="responseProcess text-white">
                                 <div class="container-loader">
                                     <div class="loader">
@@ -28,6 +27,7 @@ function SendFormAjax() {
     
     $('.SendFormAjax').submit(function (e) {
         e.preventDefault();
+
         var formData = new FormData(this); // Crea un objeto FormData con los datos del formulario
 
         var metodo = $(this).attr('method');
@@ -66,6 +66,9 @@ function SendFormAjax() {
                 contentType: false, // Evita que jQuery establezca el tipo de contenido
                 error: function() {
                     $('.msjFormSend').html(MsjErrorSending);
+                }, 
+                process: function (){
+                    $('.msjFormSend').html(MjProcesando);
                 }, 
                 success: function (data) {
                     $('.msjFormSend').html(data);
@@ -116,5 +119,4 @@ function SendFormAjax() {
 
 $(document).ready(function () {
     SendFormAjax();
-
 });

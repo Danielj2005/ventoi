@@ -15,7 +15,7 @@ $(document).ready(function(){
             cancelButtonText: ' No, Cancelar!'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href="./controller/salir.php";
+                window.location.href="http://localhost/ventoi/controller/usuario/logout.php";
             }
         });
     });

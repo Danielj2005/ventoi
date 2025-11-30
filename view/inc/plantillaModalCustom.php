@@ -2,11 +2,11 @@
     <div id="modal_tamano" class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <h5 class="modal-title text-white" id="exampleModalLabel"></h5>
                 <button id="btnCloseModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
-            <div class="modal-body row m-0" id="body_modal"> </div>
+            <div class="modal-body row m-0 text-white" id="body_modal"> </div>
 
             <div class="modal-footer">
                 <button id="btn_guardar_modal" type="submit" class="btn btn-success">Guardar</button>

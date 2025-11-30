@@ -189,7 +189,7 @@ class producto_model extends modeloPrincipal {
                         <p class="text-<?=  $mostrar["stock_actual"] == 0 ? "danger" : "primary" ?>  fw-bold mb-1">
                             <?= $mostrar["nombre_producto"]?>
                         </p>
-                        <small class="d-block text-dark">
+                        <small class="d-block text-white">
                             <span class="fw-bold">Marca:</span>  <?= $mostrar["marca"] ?>
                         </small>
                         <small class="d-block text-muted">

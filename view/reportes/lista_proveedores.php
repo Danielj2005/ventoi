@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../../modelo/modeloPrincipal.php";
+require_once "../../model/modeloPrincipal.php";
 require_once 'fpdf/fpdf.php';
 
 class PDF extends FPDF{

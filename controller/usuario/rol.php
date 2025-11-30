@@ -136,10 +136,6 @@ if($modulo === "Guardar"){
 }
 
 
-
-
-
-
 // modulo para modificar un rol registrado
 if($modulo === "Modificar"){
 
@@ -225,7 +221,10 @@ if($modulo === "Modificar"){
     
     
     try {
-            
+
+        // asignacion de roles a variables de session
+        $_SESSION['permisosRol'] = rol_model::obtenerPermisosRol(); // variable con todos los permisos del usuario a los modulos
+        
         $permisos_originales_bd = rol_model::obtenerPermisosRolById($id_rol);
         $permisos_actuales = rol_model::texto_permisos_vista($permisos_originales_bd);
         // Generar el HTML de la bitácora comparando los permisos

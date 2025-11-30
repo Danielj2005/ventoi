@@ -1,7 +1,7 @@
 <?php
 
-require_once "../../../modelo/modeloPrincipal.php"; 
-require_once "../../../modelo/proveedor_model.php"; 
+require_once "../../../model/modeloPrincipal.php"; 
+require_once "../../../model/proveedor_model.php"; 
 
 $id_proveedor = modeloPrincipal::decryptionId($_POST["id"]);
 $id_proveedor = modeloPrincipal::limpiar_cadena($id_proveedor);
@@ -30,8 +30,8 @@ if (mysqli_num_rows($consulta) < 1) {
 }
 ?>
 
-<legend class="mb-3 text-center"> Nombre del proveedor :  <b>"<?= $nombre_proveedor ?>"</b> </legend>
-<div class="table-responsive">
+<legend class="mb-3 text-center text-white"> Nombre del proveedor :  <b>"<?= $nombre_proveedor ?>"</b> </legend>
+<div class="table-responsive text-white">
     <table class="table table-striped table-borderless tableProvider pt-2">
         <thead>
             <tr>

@@ -173,11 +173,11 @@ class proveedor_model extends modeloPrincipal {
                                 modal="proveedorHistorial" 
                                 value="<?= $encryptionId ; ?>" 
                                 <?= $haveHistorial > 0 ?  'data-bs-toggle="modal" data-bs-target="#modal"' : '' ?> 
-                                class="btn col col-auto bi <?= $haveHistorial > 0 ? "btn_modal bi-eye btn-info" : "btn-dark alert-history bi-eye-slash" ?>">
+                                class="btn col col-auto bi <?= $haveHistorial > 0 ? "btn_modal bi-eye btn-info" : "btn-outline-light alert-history bi-eye-slash" ?>">
                             </button>
                             
                             <div class="dropstart col col-auto">
-                                <button class="<?= $haveHistorial > 0 ? " btn-primary" : "btn-dark alert-history" ?> col-12 col btn col-auto bi bi-three-dots-vertical" type="button" <?= $haveHistorial > 0 ? 'data-bs-toggle="dropdown" aria-expanded="false"' : "" ?> >
+                                <button class="<?= $haveHistorial > 0 ? " btn-primary" : "btn-outline-light alert-history" ?> col-12 col btn col-auto bi bi-three-dots-vertical" type="button" <?= $haveHistorial > 0 ? 'data-bs-toggle="dropdown" aria-expanded="false"' : "" ?> >
                                     <span>PDF</span>
                                     <i class="bi bi-file-earmark-arrow-down"></i>
                                 </button>
@@ -187,7 +187,7 @@ class proveedor_model extends modeloPrincipal {
                                     <li class="p-2 text-center">
                                         <form target="_blank" action="./reportes/historial_proveedor.php" method="post">
                                             <input type="hidden" value="<?= $encryptionId ; ?>" name="UID">
-                                            <button type="submit" class="btn bi bi-file-text btn-outline-success"> Exportar todas las compras</button>
+                                            <button type="submit" class="btn bi bi-file-text btn-success"> Exportar todas las compras</button>
                                         </form>
                                     </li>
                                     <li> <hr class="dropdown-divider"> </li>
@@ -213,7 +213,7 @@ class proveedor_model extends modeloPrincipal {
                                                 <p class="showThis_<?= $alterarId; ?> bg-danger-light text-danger p-2 d-none" id="mensajefechaReporteInicio" style="width: fit-content;">La fecha de inicio no puede ser mayor a la fecha de fin y ninguno puede ser mayor a la fecha actual.</p>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-12 mb-1 text-center">
-                                                <button form="<?= $alterarId; ?>" type="submit" class="d-none btn btn-outline-success bi bi-file-text" id="btnReportesFechas_<?= $alterarId; ?>">&nbsp; Generar Reporte</button>
+                                                <button form="<?= $alterarId; ?>" type="submit" class="d-none btn btn-success bi bi-file-text" id="btnReportesFechas_<?= $alterarId; ?>">&nbsp; Generar Reporte</button>
                                             </div>
                                         </form>
                                     </li>

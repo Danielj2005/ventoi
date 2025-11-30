@@ -52,14 +52,14 @@
 
             <li class="nav-item dropdown pe-3">
 
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">Usuario</span>
-                </a>
+                <button class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['dataUsuario']['nombre']." ".$_SESSION['dataUsuario']['apellido']; ?></span>
+                </button>
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                    <li class="dropdown-header  text-white-50">
-                        <h6>Usuario</h6>
-                        <span>admin</span>
+                    <li class="dropdown-header">
+                        <h6 class="text-white"><?= $_SESSION['dataUsuario']['nombre']." ".$_SESSION['dataUsuario']['apellido']; ?></h6>
+                        <span class="text-white-50"><?= $_SESSION['dataUsuario']['nombreRolUsuario']; ?></span>
                     </li>
 
                     <li> <hr class="dropdown-divider" /> </li>

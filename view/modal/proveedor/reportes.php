@@ -1,7 +1,7 @@
 <?php
 
-require_once("../../../modelo/modeloPrincipal.php"); 
-require_once("../../../modelo/proveedor_model.php"); 
+require_once "../../../model/modeloPrincipal.php"; 
+require_once "../../../model/proveedor_model.php"; 
 
 $id_proveedor = modeloPrincipal::decryptionId($_POST["id"]);
 $id_proveedor = modeloPrincipal::limpiar_cadena($id_proveedor);

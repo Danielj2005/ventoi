@@ -77,8 +77,7 @@ $_SESSION['CPS'] = $CPS;
                                     <h3 class="text-white">Acceso al Sistema </h3>
                                     <hr class="border border-white w-100"></hr>
             
-                                    <form class="SedFormAjax formulario p-0" autocomplete="off" 
-                                        action="<?= SERVERURL; ?>controller/usuario/login.php" 
+                                    <form class="SendFormAjax formulario p-0" autocomplete="off" action="<?= SERVERURL; ?>controller/usuario/login.php" 
                                         data-type-form="load" 
                                         method="post" 
                                         id="form_logIn">
@@ -95,7 +94,7 @@ $_SESSION['CPS'] = $CPS;
                                                     <option value="P-">P</option>
                                                 </select>
                                                 
-                                                <input class="form-control bg-dark boer-light text-white" type="text" id="dni_logIn" autocomplete="off" name="cedula_iniciar_sesion" placeholder="Ingresa tu Cédula / RIF" title="La cédula / RIF tiene que ser de 7 a 9 dígitos." required pattern="[0-9]{7,10}" min="7" maxlength="10" >
+                                                <input class="form-control bg-dark boer-light text-white" type="text" id="dni_logIn" autocomplete="off" name="dni_logIn" placeholder="Ej. 12345678" title="La cédula / RIF tiene que ser de 7 a 9 dígitos." required pattern="[0-9]{7,10}" min="7" maxlength="10" >
                                                 <i class="input-group-text bi bi-person h3 m-0"></i>
                                             </div>
                                         </div>
@@ -296,11 +295,13 @@ $_SESSION['CPS'] = $CPS;
         <div class="modal fade p-5" id="recuperar_contraseña" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="post" action="./api/recuperar_contraseña">
+                    <form method="post" action="<?= SERVERURL; ?>recovery">
+
                         <div class="modal-header">
                             <h1 class="modal-title fs-3 text-white" id="exampleModalLabel"><i class="text-white bi bi-key"></i>&nbsp; Recuperar Contraseña</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+
                         <div class="modal-body">
                             <div class="text-start">
                                 <label class="mb-3 text-white text-start" for="selecciona_metodo_de_recuperacion">Selecciona el Método de Recuperación<span style="color:#f00;">*</span></label>
@@ -311,10 +312,12 @@ $_SESSION['CPS'] = $CPS;
                                 </select>
                             </div>
                         </div>
+
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary" id="aceptar">Aceptar</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cancelar</button>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -323,6 +326,7 @@ $_SESSION['CPS'] = $CPS;
 
         <!-- Preloader -->
         <div id="preloader"></div>
+		<div class="msjFormSend"></div>
 
         <script src="<?= SERVERURL; ?>view/js/jquery-3.6.0.min.js"></script>
         <script src="<?= SERVERURL; ?>view/js/sweetalert2.min.js"></script>

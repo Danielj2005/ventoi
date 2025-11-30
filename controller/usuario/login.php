@@ -104,9 +104,9 @@ if ($datos_usuario["estado_rol"] == 0) {
 /** se verifica si el usuario tiene una sesion activa **/
 if ($datos_usuario["sesion_activa"] == 1) {
     modeloPrincipal::UpdateSQL("usuario","sesion_activa = '0'","id_usuario = $id_usuario");
-    alert_model::alerta_condicional('¡Sesión activa!', 'Se ha detectado una sesión activa asociada a su cuenta. Para garantizar la seguridad de su información, la sesión actual se cerrará automáticamente en breve.','warning');
-    session_unset(); // remueve o elimina las variables de sesion
-    session_destroy(); // Destruye la sesión actual
+    alert_model::alerta_simple('¡Sesión activa!', 'Se ha detectado una sesión activa asociada a su cuenta. Para garantizar la seguridad de su información, la sesión actual se cerrará automáticamente en breve.','warning');
+    // session_unset(); // remueve o elimina las variables de sesion
+    // session_destroy(); // Destruye la sesión actual
     exit();
 }
 
@@ -170,7 +170,7 @@ if ($datos_usuario["primer_inicio"] == 1) {
         '¡Bienvenido!',
         'Es su primer inicio de sesión, por favor cambie su contraseña y sus preguntas de seguridad.',
         'info',
-        './vista/mi_perfil.php');
+        './profile');
 
     exit();
 }
@@ -179,7 +179,7 @@ alert_model::alert_redirect(
     'Acceso Exitoso!',
     'Bienvenido '.$_SESSION['dataUsuario']['nombre'].' '.$_SESSION['dataUsuario']['apellido'].'.',
     'info',
-    './vista');
+    './dashboard/');
 
 mysqli_free_result($selectUser);
 exit();

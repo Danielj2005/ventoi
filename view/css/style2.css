@@ -148,13 +148,13 @@ h6 {
     content: "";
     width: 13px;
     height: 13px;
-    background: #fff;
+    background: #212529;
     position: absolute;
     top: -7px;
     right: 20px;
     transform: rotate(45deg);
-    border-top: 1px solid #eaedf1;
-    border-left: 1px solid #eaedf1;
+    border-top: 0.1px solid #eaedf1;
+    border-left: 0.1px solid #eaedf1;
   }
 }
 

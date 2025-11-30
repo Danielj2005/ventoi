@@ -1,17 +1,18 @@
 <?php
 session_start();
 
+require_once "../../config/APP.php";
 // Asegúrate de incluir el archivo del router
-require_once "../modelo/modeloPrincipal.php";
-require_once "../modelo/proveedor_model.php";
-require_once "../modelo/productos_model.php";
-require_once "../modelo/servicio_model.php";
-require_once "../modelo/marca_model.php";
-require_once "../modelo/categoria_model.php";
-require_once "../modelo/presentacion_model.php";
-require_once "../modelo/rol_model.php";
-require_once "../modelo/alert_model.php";
-require_once "../router/Router.php"; // <--- Asegúrate que la ruta sea correcta
+require_once "../../model/modeloPrincipal.php";
+require_once "../../model/proveedor_model.php";
+require_once "../../model/productos_model.php";
+require_once "../../model/servicio_model.php";
+require_once "../../model/marca_model.php";
+require_once "../../model/categoria_model.php";
+require_once "../../model/presentacion_model.php";
+require_once "../../model/rol_model.php";
+require_once "../../model/alert_model.php";
+require_once "../../router/Router.php"; // <--- Asegúrate que la ruta sea correcta
 
 use App\Router\Router;
 
